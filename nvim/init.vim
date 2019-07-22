@@ -128,7 +128,7 @@ let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir
  " Vim airline 
  " ========================================
  " Enable extensions
-let g:airline_extensions = ['branch', 'hunks', 'coc']
+let g:airline_extensions = ['branch', 'coc']
 
 " Update section z to just have line number
 let g:airline_section_z = airline#section#create(['linenr'])
