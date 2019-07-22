@@ -1,4 +1,4 @@
-#Dot files
+# Dot files
 ---
-##TODO:
+## TODO:
 - vim Figitive
