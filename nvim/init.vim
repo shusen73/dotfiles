@@ -9,10 +9,14 @@ let g:mapleader = ","
 call plug#begin('~/.local/share/nvim/plugged')
 " Make sure you use single quotes
 "
-" === Git related === 
-Plug 'tpope/vim-fugitive'
+"" Trailing whitespace highlighting & automatic fixing
+Plug 'ntpeters/vim-better-whitespace'
 
-" === Editing Plugins === 
+" === Git related ===
+Plug 'tpope/vim-fugitive'
+Plug 'mhinz/vim-signify'
+
+" === Editing Plugins ===
 "
 Plug 'easymotion/vim-easymotion'
 
@@ -25,7 +29,7 @@ Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'sheerun/vim-polyglot'
 
-" === UI === 
+" === UI ===
 "
 " Color Scheme
 Plug 'mhartington/oceanic-next'
@@ -47,8 +51,18 @@ Plug 'junegunn/fzf.vim'
 " Initialize plugin system
 call plug#end()
 
+
 " ========================================
-" Coc.nvim 
+" vim-better-whitespace
+" ========================================
+let g:strip_whitespace_on_save=1
+" ========================================
+" Signify
+" ========================================
+let g:signify_sign_delete = '-'
+
+" ========================================
+" Coc.nvim
 " ========================================
 " if hidden is not set, TextEdit might fail.
 set hidden
@@ -124,7 +138,7 @@ let g:NERDTreeMinimalUI = 1
 let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$']
 
  " ========================================
- " Vim airline 
+ " Vim airline
  " ========================================
  " Enable extensions
 let g:airline_extensions = ['branch', 'coc']
@@ -228,6 +242,24 @@ set background=dark
 
 colorscheme OceanicNext
 
+" Add custom highlights in method that is executed every time a
+" colorscheme is sourced
+" See https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f for
+" details
+function! MyHighlights() abort
+  " Hightlight trailing whitespace
+  highlight Trail ctermbg=red guibg=red
+  call matchadd('Trail', '\s\+$', 100)
+endfunction
+
+augroup MyColors
+  autocmd!
+  autocmd ColorScheme * call MyHighlights()
+augroup END
+
+" Change vertical split character to be a space (essentially hide it)
+set fillchars+=vert:.
+
 " Don't dispay mode in command line (airilne already shows it)
 set noshowmode
 
@@ -244,8 +276,35 @@ hi! SignColumn ctermfg=NONE guibg=NONE
 hi! StatusLine guifg=#16252b guibg=#6699CC
 hi! StatusLineNC guifg=#16252b guibg=#16252b
 
+" Try to hide vertical spit and end of buffer symbol
+hi! VertSplit gui=NONE guifg=#17252c guibg=#17252c
+hi! EndOfBuffer ctermbg=NONE ctermfg=NONE guibg=#17252c guifg=#17252c
+
 " Customize NERDTree directory
 hi! NERDTreeCWD guifg=#99c794
+
+" Make background color transparent for git changes
+hi! SignifySignAdd guibg=NONE
+hi! SignifySignDelete guibg=NONE
+hi! SignifySignChange guibg=NONE
+
+" Highlight git change signs
+hi! SignifySignAdd guifg=#99c794
+hi! SignifySignDelete guifg=#ec5f67
+hi! SignifySignChange guifg=#c594c5
+
+" Call method on window enter
+augroup WindowManagement
+  autocmd!
+  autocmd WinEnter * call Handle_Win_Enter()
+augroup END
+
+" Change highlight group of preview window when open
+function! Handle_Win_Enter()
+  if &previewwindow
+    setlocal winhighlight=Normal:MarkdownError
+  endif
+endfunction
 
 " Highlight the line the cursor is on.
 set cursorline
@@ -285,4 +344,3 @@ set autoread
 
 " Enable line numbers
 set number
-

@@ -1,4 +1,4 @@
 # Dot files
 ---
 ## TODO:
-- vim Figitive
+- Find out how to loop throught coc error
