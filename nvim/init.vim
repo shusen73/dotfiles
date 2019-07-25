@@ -54,6 +54,12 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " ========================================
+" nerdcommenter
+" ========================================
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" ========================================
 " emmet-vim
 " ========================================
 let g:user_emmet_settings = {
@@ -138,6 +144,10 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 "Close preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
+
+" ==== coc-prettier
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
 " ========================================
 " NERDTree
