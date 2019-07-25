@@ -20,6 +20,8 @@ Plug 'mhinz/vim-signify'
 "
 Plug 'easymotion/vim-easymotion'
 
+Plug 'mattn/emmet-vim'
+
 Plug 'scrooloose/nerdcommenter'
 
 " Intellisense Engine
@@ -51,6 +53,18 @@ Plug 'junegunn/fzf.vim'
 " Initialize plugin system
 call plug#end()
 
+" ========================================
+" emmet-vim
+" ========================================
+let g:user_emmet_settings = {
+\  'javascript.jsx' : {
+\      'extends': 'jsx',
+\      'quote_char': "'",
+\  },
+\  'javascript' : {
+\      'extends' : 'jsx',
+\  }
+\}
 
 " ========================================
 " vim-better-whitespace
