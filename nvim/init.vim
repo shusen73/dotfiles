@@ -14,7 +14,7 @@ Plug 'ntpeters/vim-better-whitespace'
 
 " === Git related ===
 Plug 'tpope/vim-fugitive'
-" Plug 'mhinz/vim-signify'
+Plug 'mhinz/vim-signify'
 
 " === Editing Plugins ===
 "
@@ -76,10 +76,10 @@ let g:user_emmet_settings = {
 " vim-better-whitespace
 " ========================================
 let g:strip_whitespace_on_save=1
-" " ========================================
-" " Signify
-" " ========================================
-" let g:signify_sign_delete = '-'
+" ========================================
+" signify
+" ========================================
+let g:signify_sign_delete = '-'
 
 " ========================================
 " Coc.nvim
@@ -308,14 +308,14 @@ hi! EndOfBuffer ctermbg=NONE ctermfg=NONE guibg=#17252c guifg=#17252c
 " hi! NERDTreeCWD guifg=#99c794
 
 " Make background color transparent for git changes
-" hi! SignifySignAdd guibg=NONE
-" hi! SignifySignDelete guibg=NONE
-" hi! SignifySignChange guibg=NONE
+hi! SignifySignAdd guibg=NONE
+hi! SignifySignDelete guibg=NONE
+hi! SignifySignChange guibg=NONE
 
-" " Highlight git change signs
-" hi! SignifySignAdd guifg=#99c794
-" hi! SignifySignDelete guifg=#ec5f67
-" hi! SignifySignChange guifg=#c594c5
+" Highlight git change signs
+hi! SignifySignAdd guifg=#99c794
+hi! SignifySignDelete guifg=#ec5f67
+hi! SignifySignChange guifg=#c594c5
 
 " Call method on window enter
 augroup WindowManagement
