@@ -38,7 +38,7 @@ Plug 'mhartington/oceanic-next'
 " Plug 'morhetz/gruvbox'
 
 " File browsing
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
 
 Plug 'vim-airline/vim-airline'
 
@@ -149,17 +149,17 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 " ==== coc-prettier
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
-" ========================================
-" NERDTree
-" ========================================
-" Show hidden files/directories
-let g:NERDTreeShowHidden = 1
+" " ========================================
+" " NERDTree
+" " ========================================
+" " Show hidden files/directories
+" let g:NERDTreeShowHidden = 1
 
-" Remove bookmarks and help text from NERDTree
-let g:NERDTreeMinimalUI = 1
+" " Remove bookmarks and help text from NERDTree
+" let g:NERDTreeMinimalUI = 1
 
-" Hide certain files and directories from NERDTree
-let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$']
+" " Hide certain files and directories from NERDTree
+" let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$']
 
  " ========================================
  " Vim airline
@@ -187,8 +187,8 @@ let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
 let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
 let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
-" Hide the Nerdtree status line to avoid clutter
-let g:NERDTreeStatusline = ''
+" " Hide the Nerdtree status line to avoid clutter
+" let g:NERDTreeStatusline = ''
 
 " Disable vim-airline in preview mode
 let g:airline_exclude_preview = 1
@@ -304,8 +304,8 @@ hi! StatusLineNC guifg=#16252b guibg=#16252b
 hi! VertSplit gui=NONE guifg=#17252c guibg=#17252c
 hi! EndOfBuffer ctermbg=NONE ctermfg=NONE guibg=#17252c guifg=#17252c
 
-" Customize NERDTree directory
-hi! NERDTreeCWD guifg=#99c794
+" " Customize NERDTree directory
+" hi! NERDTreeCWD guifg=#99c794
 
 " Make background color transparent for git changes
 hi! SignifySignAdd guibg=NONE
@@ -341,8 +341,12 @@ set ruler
 " Key Mappings
 " ========================================
 
+
+" === coc-explorer ===
+nnoremap <leader>a :CocCommand explorer<cr>
+
 " === Nerdtree shorcuts === "
-nnoremap <leader>a :NERDTreeToggle<cr>
+" nnoremap <leader>a :NERDTreeToggle<cr>
 
 nnoremap j gj
 nnoremap k gk
