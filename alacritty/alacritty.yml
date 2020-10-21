@@ -169,12 +169,14 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: false
 
-# Colors (Oceanic Next)
+# Colors (Gruvbox dark)
 colors:
   # Default colors
   primary:
-    background: '#1b2b34'
-    foreground: '#d8dee9'
+    # hard contrast: background = '#1d2021'
+    background: '#282828'
+    # soft contrast: background = '#32302f'
+    foreground: '#ebdbb2'
     # Bright and dim foreground colors
     #
     # The dimmed foreground color is calculated automatically if it is not present.
@@ -228,27 +230,27 @@ colors:
     #  background: '#c5c8c6'
     #  foreground: '#1d1f21'
 
-  # Normal colors
+ # Normal colors
   normal:
-    black:   '#343d46'
-    red:     '#EC5f67'
-    green:   '#99C794'
-    yellow:  '#FAC863'
-    blue:    '#6699cc'
-    magenta: '#c594c5'
-    cyan:    '#5fb3b3'
-    white:   '#d8dee9'
+    black:   '#282828'
+    red:     '#cc241d'
+    green:   '#98971a'
+    yellow:  '#d79921'
+    blue:    '#458588'
+    magenta: '#b16286'
+    cyan:    '#689d6a'
+    white:   '#a89984'
 
   # Bright colors
   bright:
-    black:   '#343d46'
-    red:     '#EC5f67'
-    green:   '#99C794'
-    yellow:  '#FAC863'
-    blue:    '#6699cc'
-    magenta: '#c594c5'
-    cyan:    '#5fb3b3'
-    white:   '#d8dee9'
+    black:   '#928374'
+    red:     '#fb4934'
+    green:   '#b8bb26'
+    yellow:  '#fabd2f'
+    blue:    '#83a598'
+    magenta: '#d3869b'
+    cyan:    '#8ec07c'
+    white:   '#ebdbb2'
 
   # Dim colors
   #

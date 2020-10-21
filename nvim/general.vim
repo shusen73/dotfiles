@@ -19,7 +19,7 @@ endif
 set background=dark
 " syntax enable
 syntax on
-colorscheme OceanicNext
+colorscheme gruvbox
 
 
 let g:oceanic_next_terminal_bold = 1

@@ -11,7 +11,7 @@ let g:general= g:dotfilesPath . 'general.vim'
 " load files
 
 exe 'source ' g:plugins
+exe 'source ' g:coc
 exe 'source ' g:pluginSettings
 exe 'source ' g:general
-" exe 'source ' g:coc
 

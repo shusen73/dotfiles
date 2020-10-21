@@ -30,7 +30,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'mhinz/vim-startify'
 "
 " Color Scheme
-Plug 'mhartington/oceanic-next'
+" Plug 'mhartington/oceanic-next'
+Plug 'morhetz/gruvbox'
 
 Plug 'vim-airline/vim-airline'
 

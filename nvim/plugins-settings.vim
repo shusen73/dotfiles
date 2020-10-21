@@ -33,6 +33,6 @@ let g:NERDSpaceDelims = 1
  " Vim airline
  " ========================================
  "
-let g:airline_theme='oceanicnext'
+let g:airline_theme='gruvbox'
 " Hide the Nerdtree status line to avoid clutter
 let g:NERDTreeStatusline = ''
