@@ -1,3 +1,6 @@
+let g:mapleader = ","
+set encoding=UTF-8
+
 " define paths in global variables
 
 let g:dotfilesPath  = '~/Projects/dotfiles/nvim/'
